@@ -140,9 +140,11 @@
                                                                 }
                                                                 #four {
                                                                     scroll-snap-align: none;
+                                                                   scroll-snap-type: none;
                                                                 }
                                                                 #p-view {
                                                                     scroll-snap-align: none;
+                                                                   scroll-snap-type: none;
                                                                 }
                                                             }
                                                             
