@@ -138,6 +138,12 @@
                                                                 .oneD {
                                                                     gap: 15%;
                                                                 }
+                                                                #four {
+                                                                    scroll-snap-align: none;
+                                                                }
+                                                                #p-view {
+                                                                    scroll-snap-align: none;
+                                                                }
                                                             }
                                                             
                                                             @media screen and (max-width: 766px) {
