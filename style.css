@@ -146,6 +146,14 @@ nav a:hover {
         scroll-snap-align: none;
         scroll-snap-type: none;
     }
+        footer {
+        align-content: space-between;
+        width: 50%;
+        gap: 10%;
+    }
+    footer ul {
+        flex-wrap: wrap;
+    }
     
     
 }
@@ -162,14 +170,7 @@ nav a:hover {
         grid-template-rows: 13rem 1fr 1fr;
     }
     
-    footer {
-    
-  align-content: space-between;
-    width:60%;
-    
    
-    
-}
     
 }
 
