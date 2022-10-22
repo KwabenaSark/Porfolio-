@@ -1,485 +1,495 @@
-                                                            * {
-                                                                margin: 0;
-                                                                padding: 0;
-                                                                box-sizing: border-box;
-                                                                font-family: sans-serif;
-                                                                scroll-behavior: smooth;
-                                                            }
-                                                            
-                                                            section {
-                                                                height: 100vh;
-                                                                scroll-snap-align: start;
-                                                            }
-                                                            
-                                                            #three {
-                                                                height: 200vh;
-                                                            }
-                                                            
-                                                            .one {
-                                                                background: rgb(0, 0, 0);
-                                                                background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(2, 0, 36, 1) 24%, rgba(75, 0, 93, 1) 47%, rgba(87, 0, 102, 1) 52%, rgba(132, 8, 143, 1) 62%, rgba(255, 255, 255, 0) 88%);
-                                                            }
-                                                            
-                                                            .oneD {
-                                                                display: grid;
-                                                                gap: 30%;
-                                                            }
-                                                            
-                                                            .container {
-                                                                scroll-snap-type: y mandatory;
-                                                                overflow-y: scroll;
-                                                                height: 100vh;
-                                                            }
-                                                            
-                                                             ::-webkit-scrollbar {
-                                                                width: 0;
-                                                                background: transparent;
-                                                            }
-                                                            
-                                                            #more {
-                                                                display: none;
-                                                            }
-                                                            
-                                                            nav {
-                                                                display: flex;
-                                                                align-items: center;
-                                                                justify-content: center;
-                                                                gap: 5rem;
-                                                                padding-top: 1rem;
-                                                            }
-                                                            
-                                                            nav a {
-                                                                font-size: 15px;
-                                                                text-decoration: none;
-                                                                text-transform: uppercase;
-                                                                text-align: center;
-                                                                color: #818181;
-                                                                cursor: pointer;
-                                                                transition: all 1s cubic-bezier(.47, 1.64, .41, .8);
-                                                            }
-                                                            
-                                                            nav a:hover {
-                                                                box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px #e56fa8;
-                                                                border-radius: 1rem;
-                                                            }
-                                                            
-                                                            .name {
-                                                                font-size: 50px;
-                                                            }
-                                                            
-                                                            .info {
-                                                                padding-top: 1rem;
-                                                                max-width: 63rem;
-                                                            }
-                                                            
-                                                            .logos {
-                                                                display: flex;
-                                                                gap: 1.5rem;
-                                                                place-items: center;
-                                                                width: 50%;
-                                                                height: 10%;
-                                                                font-size: 1.5rem;
-                                                                transition: all 1s cubic-bezier(.47, 1.64, .41, .8);
-                                                            }
-                                                            
-                                                            .logos button {
-                                                                background-color: #FF4600;
-                                                                color: white;
-                                                                width: 5rem;
-                                                                height: 1.3rem;
-                                                                border-radius: .4rem;
-                                                                border: 1px solid black;
-                                                                transition: 1s, top 1s, left 1s;
-                                                                display: flex;
-                                                                text-align: center;
-                                                                justify-content: center;
-                                                            }
-                                                            
-                                                            .logos a {
-                                                                transition: all 1s cubic-bezier(.47, 1.64, .41, .8);
-                                                                display: flex;
-                                                                text-decoration: none;
-                                                            }
-                                                            
-                                                            .logclr {
-                                                                color: black;
-                                                            }
-                                                            
-                                                            .logclr::selection:hover {
-                                                                color: #FF4600
-                                                            }
-                                                            
-                                                            .logclr:hover {
-                                                                color: #FF4600
-                                                            }
-                                                            
-                                                            .logos :hover {
-                                                                transform: scale(1.2);
-                                                            }
-                                                            
-                                                            .intro {
-                                                                margin: 10px 40px;
-                                                                display: grid;
-                                                                grid-template-rows: 1fr 1fr 1fr;
-                                                                gap: 1rem;
-                                                                z-index: 20;
-                                                            }
-                                                            
-                                                            @media screen and (max-width: 430px) {
-                                                                #three {
-                                                                    height: 300vh;
-                                                                }
-                                                                .tracker {
-                                                                    visibility: hidden;
-                                                                }
-                                                                #p-view {
-                                                                    scroll-snap-align: start;
-                                                                }
-                                                                .oneD {
-                                                                    gap: 15%;
-                                                                }
-                                                                #four {
-                                                                    scroll-snap-align: none;
-                                                                   scroll-snap-type: none;
-                                                                }
-                                                                #p-view {
-                                                                    scroll-snap-align: none;
-                                                                   scroll-snap-type: none;
-                                                                }
-                                                            }
-                                                            
-                                                            @media screen and (max-width: 766px) {
-                                                                #three {
-                                                                    overflow: hidden;
-                                                                    overflow-y: scroll;
-                                                                }
-                                                                #two {
-                                                                    overflow-y: scroll;
-                                                                }
-                                                                .intro {
-                                                                    grid-template-rows: 13rem 1fr 1fr;
-                                                                }
-                                                            }
-                                                            
-                                                            #one {
-                                                                overflow: hidden;
-                                                            }
-                                                            
-                                                            .tracker {
-                                                                position: fixed;
-                                                                transform: translate(-50%, -50%);
-                                                                width: 40px;
-                                                                z-index: 1;
-                                                                pointer-events: none;
-                                                                transition: all .15s
-                                                            }
-                                                            
-                                                            .tracker .svg {
-                                                                width: 120%;
-                                                                height: 120%;
-                                                                z-index: 1;
-                                                            }
-                                                            
-                                                            .name a {
-                                                                text-decoration: none;
-                                                                color: black;
-                                                            }
-                                                            
-                                                            .wrap {
-                                                                color: black
-                                                            }
-                                                            /* Page 2 */
-                                                            
-                                                            .two {
-                                                                padding-right: 2.5rem;
-                                                                padding-top: 1rem;
-                                                                z-index: 20;
-                                                                overflow: hidden;
-                                                                padding-left: 2.5rem;
-                                                            }
-                                                            
-                                                            .heading {
-                                                                font-size: 2.5rem;
-                                                            }
-                                                            
-                                                            .head2 {
-                                                                font-weight: bold;
-                                                            }
-                                                            
-                                                            .container2 {
-                                                                display: grid;
-                                                                height: 90vh;
-                                                                gap: 1rem;
-                                                                grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
-                                                            }
-                                                            
-                                                            .lang {
-                                                                display: flex;
-                                                                flex-direction: row;
-                                                                flex-flow: wrap;
-                                                                width: 100%;
-                                                                gap: 1rem;
-                                                                transition: 1s, top 1s, left 1s;
-                                                                color: white;
-                                                                z-index: 20;
-                                                            }
-                                                            
-                                                            .lang:hover {
-                                                                flex: 3;
-                                                                transition: 1s, top 1s, left 1s;
-                                                            }
-                                                            
-                                                            .lang span {
-                                                                background-color: #6e0b79;
-                                                                flex: 1;
-                                                                height: 2rem;
-                                                                border-radius: .5rem;
-                                                                text-align: center;
-                                                                box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px #e56fa8;
-                                                                transition: 1s, top 1s, left 1s;
-                                                                align-items: center;
-                                                                justify-content: center;
-                                                                display: flex;
-                                                                font-weight: bolder;
-                                                                z-index: 20;
-                                                            }
-                                                            
-                                                            .lang span:hover {
-                                                                flex: 3;
-                                                                box-shadow: 0px 0px 0 0px white, 0px 0px, 0px 0px 0 0px white, 0px 0px;
-                                                            }
-                                                            
-                                                            .photo {
-                                                                overflow: hidden;
-                                                                border-radius: 1rem;
-                                                                max-width: 100%;
-                                                            }
-                                                            
-                                                            .desc {
-                                                                height: auto;
-                                                                z-index: 20;
-                                                            }
-                                                            
-                                                            .sing {
-                                                                width: 6rem;
-                                                                height: 2.5rem;
-                                                                color: white;
-                                                                background-color: #FF4600;
-                                                                border-radius: .5rem;
-                                                                box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px purple;
-                                                                transition: 1s, top 1s, left 1s;
-                                                                top: 0;
-                                                                left: 0;
-                                                                float: right;
-                                                                margin-right: 3rem;
-                                                                border: none;
-                                                            }
-                                                            
-                                                            .sing:hover {
-                                                                color: black;
-                                                                top: -20px;
-                                                                width: 7rem;
-                                                                left: 20px;
-                                                                box-shadow: 0px 0px 0 0px white, 0px 0px, 0px 0px 0 0px white, 0px 0px;
-                                                            }
-                                                            
-                                                            .group {
-                                                                display: grid;
-                                                                grid-template-rows: .2fr 2fr;
-                                                            }
-                                                            
-                                                            .desc h2 {
-                                                                font-size: 2.5rem;
-                                                            }
-                                                            /* Page 3 */
-                                                            
-                                                            #three {
-                                                                padding-top: 1rem;
-                                                                padding-left: 2.5rem;
-                                                                padding-right: 2.5rem;
-                                                            }
-                                                            
-                                                            .projects {
-                                                                height: 140vh;
-                                                                display: grid;
-                                                                grid-template-rows: 1fr 1fr 1fr .1fr;
-                                                                gap: 2rem;
-                                                            }
-                                                            
-                                                            .grid {
-                                                                display: grid;
-                                                                grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
-                                                                place-items: center;
-                                                                gap: 5rem;
-                                                            }
-                                                            
-                                                            .p_pic {
-                                                                border-radius: 4rem;
-                                                                object-fit: contain;
-                                                                width: 18rem;
-                                                                height: 18rem;
-                                                                box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 0px;
-                                                                transition: all .5s cubic-bezier(.47, 1.64, .41, .8);
-                                                                overflow: hidden;
-                                                            }
-                                                            
-                                                            .p_pic img {
-                                                                width: 100%;
-                                                            }
-                                                            
-                                                            .p_desc {
-                                                                border-radius: 2rem;
-                                                                width: 80%;
-                                                                height: 100%;
-                                                                display: grid;
-                                                                grid-template-rows: 1fr .1fr .2fr 1fr 2fr;
-                                                                gap: 1rem;
-                                                                padding: 1rem;
-                                                                border: 2px solid black;
-                                                                z-index: 20;
-                                                            }
-                                                            
-                                                            .p_pic:hover {
-                                                                transform: translate(0px, -10px);
-                                                                box-shadow: rgba(17, 12, 46, 0.15) 0px 25px 10px;
-                                                            }
-                                                            
-                                                            .used {
-                                                                position: relative;
-                                                                right: 14%;
-                                                            }
-                                                            
-                                                            .used2 {
-                                                                position: relative;
-                                                                right: -14%;
-                                                            }
-                                                            
-                                                            .go-r {
-                                                                text-align: right;
-                                                            }
-                                                            
-                                                            .p_desc .sing2 {
-                                                                display: grid;
-                                                                place-items: end;
-                                                            }
-                                                            
-                                                            .p-lang {
-                                                                display: flex;
-                                                                flex-direction: row;
-                                                                flex-flow: wrap;
-                                                                width: 100%;
-                                                                gap: 1rem;
-                                                                transition: 1s, top 1s, left 1s;
-                                                                color: white;
-                                                                transform: scale(.7);
-                                                            }
-                                                            
-                                                            .p-lang:hover {
-                                                                flex: 3;
-                                                                transition: 1s, top 1s, left 1s;
-                                                            }
-                                                            
-                                                            .clr {
-                                                                color: #FF4600;
-                                                            }
-                                                            
-                                                            .p-lang span {
-                                                                background-color: rgb(56, 2, 56);
-                                                                flex: 1.5rem;
-                                                                height: 2rem;
-                                                                border-radius: .5rem;
-                                                                text-align: center;
-                                                                box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px purple;
-                                                                transition: 1s, top 1s, left 1s;
-                                                                align-items: center;
-                                                                justify-content: center;
-                                                                display: flex;
-                                                                font-weight: bolder;
-                                                            }
-                                                            
-                                                            .p-lang span:hover {
-                                                                flex: 3;
-                                                                box-shadow: 0px 0px 0 0px white, 0px 0px, 0px 0px 0 0px white, 0px 0px;
-                                                            }
-                                                            
-                                                            .pwords2 {
-                                                                text-align: right;
-                                                                align-items: flex-end;
-                                                            }
-                                                            
-                                                            .sing2 {
-                                                                float: right;
-                                                            }
-                                                            
-                                                            .pright {
-                                                                float: right;
-                                                            }
-                                                            
-                                                            .head2 {
-                                                                font-size: xx-large;
-                                                                text-align: center;
-                                                                font-weight: 10px;
-                                                            }
-                                                            
-                                                            .last {
-                                                                display: grid;
-                                                                place-items: center;
-                                                                text-decoration: none;
-                                                            }
-                                                            
-                                                            .git {
-                                                                text-decoration: none;
-                                                                color: black;
-                                                            }
-                                                            
-                                                            .git:hover {
-                                                                border-bottom: 1px solid black;
-                                                            }
-                                                            
-                                                            #p-view {
-                                                                scroll-snap-align: center;
-                                                            }
-                                                            /* footer */
-                                                            
-                                                            #four {
-                                                                height: 20vh;
-                                                                scroll-snap-align: end;
-                                                            }
-                                                            
-                                                            footer {
-                                                                display: flex;
-                                                                color: black;
-                                                                column-gap: 50%;
-                                                                align-items: center;
-                                                                justify-content: center;
-                                                                width: 100%;
-                                                                padding-left: 2rem;
-                                                                padding-right: 2rem;
-                                                            }
-                                                            
-                                                            footer p {
-                                                                text-align: left;
-                                                                font-size: 15px;
-                                                                flex-grow: 2;
-                                                            }
-                                                            
-                                                            footer ul {
-                                                                text-align: right;
-                                                                display: flex;
-                                                                gap: 3rem;
-                                                                font-size: 1.5rem;
-                                                                justify-content: flex-end;
-                                                            }
-                                                            /* animation */
-                                                            
-                                                            .hidden {
-                                                                opacity: 0;
-                                                                transition: all 1s;
-                                                                filter: blur(5px);
-                                                            }
-                                                            
-                                                            .show {
-                                                                opacity: 1;
-                                                                filter: blur(0);
-                                                                transform: translateY(0);
-                                                            }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+#three {
+    height: 200vh;
+}
+
+.one {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(2, 0, 36, 1) 24%, rgba(75, 0, 93, 1) 47%, rgba(87, 0, 102, 1) 52%, rgba(132, 8, 143, 1) 62%, rgba(255, 255, 255, 0) 88%);
+}
+
+.oneD {
+    display: grid;
+    gap: 30%;
+}
+
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+ ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+}
+
+#more {
+    display: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 1rem;
+}
+
+nav a {
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #818181;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(.47, 1.64, .41, .8);
+}
+
+nav a:hover {
+    box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px #e56fa8;
+    border-radius: 1rem;
+}
+
+.name {
+    font-size: 50px;
+}
+
+.info {
+    padding-top: 1rem;
+    max-width: 63rem;
+}
+
+.logos {
+    display: flex;
+    gap: 1.5rem;
+    place-items: center;
+    width: 50%;
+    height: 10%;
+    font-size: 1.5rem;
+    transition: all 1s cubic-bezier(.47, 1.64, .41, .8);
+}
+
+.logos button {
+    background-color: #FF4600;
+    color: white;
+    width: 5rem;
+    height: 1.3rem;
+    border-radius: .4rem;
+    border: 1px solid black;
+    transition: 1s, top 1s, left 1s;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.logos a {
+    transition: all 1s cubic-bezier(.47, 1.64, .41, .8);
+    display: flex;
+    text-decoration: none;
+}
+
+.logclr {
+    color: black;
+}
+
+.logclr::selection:hover {
+    color: #FF4600
+}
+
+.logclr:hover {
+    color: #FF4600
+}
+
+.logos :hover {
+    transform: scale(1.2);
+}
+
+.intro {
+    margin: 10px 40px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    z-index: 20;
+}
+
+@media screen and (max-width: 430px) {
+    #three {
+        height: 300vh;
+    }
+    .tracker {
+        visibility: hidden;
+    }
+    #p-view {
+        scroll-snap-align: start;
+    }
+    .oneD {
+        gap: 15%;
+    }
+    #four {
+        scroll-snap-align: none;
+        scroll-snap-type: none;
+    }
+    #p-view {
+        scroll-snap-align: none;
+        scroll-snap-type: none;
+    }
+}
+
+@media screen and (max-width: 766px) {
+    #three {
+        overflow: auto;
+        overflow-y: scroll;
+    }
+    #two {
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+    }
+    .intro {
+        grid-template-rows: 13rem 1fr 1fr;
+    }
+}
+
+#one {
+    overflow: hidden;
+}
+
+.tracker {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    z-index: 1;
+    pointer-events: none;
+    transition: all .15s
+}
+
+.tracker .svg {
+    width: 120%;
+    height: 120%;
+    z-index: 1;
+}
+
+.name a {
+    text-decoration: none;
+    color: black;
+}
+
+.wrap {
+    color: black
+}
+
+
+/* Page 2 */
+
+.two {
+    padding-right: 2.5rem;
+    padding-top: 1rem;
+    z-index: 20;
+    overflow: hidden;
+    padding-left: 2.5rem;
+}
+
+.heading {
+    font-size: 2.5rem;
+}
+
+.head2 {
+    font-weight: bold;
+}
+
+.container2 {
+    display: grid;
+    height: 90vh;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
+}
+
+.lang {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 100%;
+    gap: 1rem;
+    transition: 1s, top 1s, left 1s;
+    color: white;
+    z-index: 20;
+}
+
+.lang:hover {
+    flex: 3;
+    transition: 1s, top 1s, left 1s;
+}
+
+.lang span {
+    background-color: #6e0b79;
+    flex: 1;
+    height: 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px #e56fa8;
+    transition: 1s, top 1s, left 1s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: bolder;
+    z-index: 20;
+}
+
+.lang span:hover {
+    flex: 3;
+    box-shadow: 0px 0px 0 0px white, 0px 0px, 0px 0px 0 0px white, 0px 0px;
+}
+
+.photo {
+    overflow: hidden;
+    border-radius: 1rem;
+    max-width: 100%;
+}
+
+.desc {
+    height: auto;
+    z-index: 20;
+}
+
+.sing {
+    width: 6rem;
+    height: 2.5rem;
+    color: white;
+    background-color: #FF4600;
+    border-radius: .5rem;
+    box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px purple;
+    transition: 1s, top 1s, left 1s;
+    top: 0;
+    left: 0;
+    float: right;
+    margin-right: 3rem;
+    border: none;
+}
+
+.sing:hover {
+    color: black;
+    top: -20px;
+    width: 7rem;
+    left: 20px;
+    box-shadow: 0px 0px 0 0px white, 0px 0px, 0px 0px 0 0px white, 0px 0px;
+}
+
+.group {
+    display: grid;
+    grid-template-rows: .2fr 2fr;
+}
+
+.desc h2 {
+    font-size: 2.5rem;
+}
+
+
+/* Page 3 */
+
+#three {
+    padding-top: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.projects {
+    height: 140vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr .1fr;
+    gap: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, auto));
+    place-items: center;
+    gap: 5rem;
+}
+
+.p_pic {
+    border-radius: 4rem;
+    object-fit: contain;
+    width: 18rem;
+    height: 18rem;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 0px;
+    transition: all .5s cubic-bezier(.47, 1.64, .41, .8);
+    overflow: hidden;
+}
+
+.p_pic img {
+    width: 100%;
+}
+
+.p_desc {
+    border-radius: 2rem;
+    width: 80%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr .1fr .2fr 1fr 2fr;
+    gap: 1rem;
+    padding: 1rem;
+    border: 2px solid black;
+    z-index: 20;
+}
+
+.p_pic:hover {
+    transform: translate(0px, -10px);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 25px 10px;
+}
+
+.used {
+    position: relative;
+    right: 14%;
+}
+
+.used2 {
+    position: relative;
+    right: -14%;
+}
+
+.go-r {
+    text-align: right;
+}
+
+.p_desc .sing2 {
+    display: grid;
+    place-items: end;
+}
+
+.p-lang {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 100%;
+    gap: 1rem;
+    transition: 1s, top 1s, left 1s;
+    color: white;
+    transform: scale(.7);
+}
+
+.p-lang:hover {
+    flex: 3;
+    transition: 1s, top 1s, left 1s;
+}
+
+.clr {
+    color: #FF4600;
+}
+
+.p-lang span {
+    background-color: rgb(56, 2, 56);
+    flex: 1.5rem;
+    height: 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    box-shadow: 10px 10px 0px -3px white, 10px 10px black, 20px 20px 100px purple;
+    transition: 1s, top 1s, left 1s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: bolder;
+}
+
+.p-lang span:hover {
+    flex: 3;
+    box-shadow: 0px 0px 0 0px white, 0px 0px, 0px 0px 0 0px white, 0px 0px;
+}
+
+.pwords2 {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.sing2 {
+    float: right;
+}
+
+.pright {
+    float: right;
+}
+
+.head2 {
+    font-size: xx-large;
+    text-align: center;
+    font-weight: 10px;
+}
+
+.last {
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+}
+
+.git {
+    text-decoration: none;
+    color: black;
+}
+
+.git:hover {
+    border-bottom: 1px solid black;
+}
+
+#p-view {
+    scroll-snap-align: center;
+}
+
+
+/* footer */
+
+#four {
+    height: 20vh;
+    scroll-snap-align: end;
+}
+
+footer {
+    display: flex;
+    color: black;
+    column-gap: 50%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+footer p {
+    text-align: left;
+    font-size: 15px;
+    flex-grow: 2;
+}
+
+footer ul {
+    text-align: right;
+    display: flex;
+    gap: 3rem;
+    font-size: 1.5rem;
+    justify-content: flex-end;
+}
+
+
+/* animation */
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
