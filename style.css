@@ -452,10 +452,10 @@ nav a:hover {
 footer {
     display: flex;
     color: black;
-    gap: 30%;
+    gap: 50%;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100wh;
     height:20%;
     padding-left: 2rem;
     padding-right: 2rem;
