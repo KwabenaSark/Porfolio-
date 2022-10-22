@@ -146,16 +146,7 @@ nav a:hover {
         scroll-snap-align: none;
         scroll-snap-type: none;
     }
-        footer {
-        align-content: space-between;
-        width: 50%;
-       
-    
-    }
-    
-     footer ul a {
-        gap: 1px;
-    }
+        
     
     
 }
@@ -467,28 +458,27 @@ nav a:hover {
 footer {
     display: flex;
     color: black;
-    gap: 50%;
+    gap: 40%;
     align-items: center;
     justify-content: center;
-   
-    height:20%;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    width: 100%;
     scroll-snap-align: end;
+    flex-wrap: wrap;
 }
 
 footer p {
     text-align: left;
     font-size: 15px;
-    flex-grow: 2;
+    width: 30%;
 }
 
 footer ul {
     text-align: right;
     display: flex;
-    gap: 3rem;
+    gap: 20%;
     font-size: 1.5rem;
-    justify-content: flex-end;
+    width: 30%;
+    flex-wrap: wrap;
 }
 
 
