@@ -146,6 +146,8 @@ nav a:hover {
         scroll-snap-align: none;
         scroll-snap-type: none;
     }
+    
+    
 }
 
 @media screen and (max-width: 766px) {
@@ -166,7 +168,7 @@ nav a:hover {
     width:50%;
     
     align-items: center;
-    justify-content: center;  
+    
 }
     
 }
