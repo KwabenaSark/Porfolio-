@@ -440,9 +440,7 @@ nav a:hover {
     border-bottom: 1px solid black;
 }
 
-#p-view {
-    scroll-snap-align: center;
-}
+
 
 
 /* footer */
