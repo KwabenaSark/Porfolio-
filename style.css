@@ -161,7 +161,7 @@ nav a:hover {
     }
     
     footer {
-   
+   width:50%;
     gap: 25%;
     align-items: center;
     justify-content: center;  
