@@ -149,12 +149,12 @@ nav a:hover {
         footer {
         align-content: space-between;
         width: 50%;
-        padding-left: 2.5rem;
+       
     
     }
     
-     footer ul {
-        gap: 5px;
+     footer ul a {
+        gap: 1px;
     }
     
     
