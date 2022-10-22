@@ -133,9 +133,7 @@ nav a:hover {
     .tracker {
         visibility: hidden;
     }
-    #p-view {
-        scroll-snap-align: start;
-    }
+   
     .oneD {
         gap: 15%;
     }
