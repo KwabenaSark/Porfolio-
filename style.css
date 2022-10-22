@@ -128,12 +128,11 @@ nav a:hover {
 
 @media screen and (max-width: 430px) {
     #three {
-        height: 300vh;
+        height: fit-content;
     }
     .tracker {
         visibility: hidden;
     }
-   
     .oneD {
         gap: 15%;
     }
@@ -149,8 +148,7 @@ nav a:hover {
 
 @media screen and (max-width: 766px) {
     #three {
-        overflow: auto;
-        overflow-y: scroll;
+        height: fit-content;
     }
     #two {
         overflow-y: scroll;
@@ -440,7 +438,9 @@ nav a:hover {
     border-bottom: 1px solid black;
 }
 
-
+#p-view {
+    scroll-snap-align: center;
+}
 
 
 /* footer */
