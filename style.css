@@ -136,7 +136,7 @@ nav a:hover {
         visibility: hidden;
     }
     .oneD {
-        gap: 15%;
+        gap: 10%;
     }
     #four {
         scroll-snap-align: none;
